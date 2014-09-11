@@ -1,4 +1,4 @@
-module.exports = require('eden-class').define(function(prototype) {
+module.exports = require('eden-class').extend(function(prototype) {
 	/* Require
 	-------------------------------*/
 	var argument = require('argument');
