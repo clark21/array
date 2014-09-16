@@ -1,7 +1,6 @@
 module.exports = require('eden-class').extend(function(prototype) {
 	/* Require
 	-------------------------------*/
-	var argument = require('argument');
 	var hash = require('eden-hash');
 	
 	/* Constants
@@ -24,7 +23,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.clone = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		return data.slice(0);
 	};
 	
@@ -37,7 +36,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.combine = function(keys, values) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'array');
 		
@@ -60,7 +59,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.concat = prototype.merge = function(data, list) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'array');
 		
@@ -90,7 +89,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.each = function(data, callback) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'function');
 		
@@ -118,7 +117,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.has = function(data, value) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(1, 'mixed');
 		
@@ -134,7 +133,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.implode = prototype.join = function(data, delimeter) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'string');
 		
@@ -159,7 +158,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.isEmpty = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		return data.length === 0;
 	};
@@ -172,7 +171,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.keys = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		var keys = [], index;
 		
@@ -194,7 +193,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.lastIndexOf = function(data, value) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'mixed');
 		
@@ -212,7 +211,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.map = function(data, callback) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'function');
 		
@@ -232,7 +231,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.natsort = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		return this.sort(data, function(a, b) {
 			aValue = a + '';
@@ -258,7 +257,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.pop = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		data = this.clone(data);
 		return data.pop();
@@ -273,7 +272,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.push = function(data, value) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'mixed');
 		
@@ -297,7 +296,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.reverse = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		data = this.clone(data);
 		
@@ -315,7 +314,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.slice = function(data) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'int')
 			.test(3, 'int', 'undefined');
@@ -337,7 +336,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.splice = function(data) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'int')
 			.test(3, 'int', 'undefined');
@@ -356,7 +355,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.sort = function(data, method) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'function', 'undefined');
 		
@@ -379,7 +378,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.size = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		return data.length;
 	};
@@ -393,7 +392,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.toQuery = function(data, prefix) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'string', 'undefined');
 		
@@ -429,7 +428,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.toString = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		return JSON.stringify(data);
 	};
@@ -443,7 +442,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.unshift = function(data) {
 		//Argument Testing
-		argument
+		this.argument()
 			.test(1, 'array')
 			.test(2, 'mixed');
 		
@@ -467,7 +466,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 */
 	prototype.values = function(data) {
 		//Argument Testing
-		argument.test(1, 'array');
+		this.argument().test(1, 'array');
 		
 		var values = [], index;
 		
