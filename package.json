@@ -1,7 +1,7 @@
 {
   "name": "eden-array",
   "description": "Eden Node JS Array Methods",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": {
     "name": "Christian Blanquera",
     "email": "cblanquera@openovate.com"
@@ -14,8 +14,8 @@
     "mocha": "1.21.4"
   },
   "dependencies": {
-	"eden-class": "0.0.8",
-	"eden-hash": "0.0.8"
+	"eden-class": "0.0.9",
+	"eden-hash": "0.0.9"
   },
   "main": "./array.js",
   "repository": {
