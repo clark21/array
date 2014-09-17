@@ -1,4 +1,4 @@
-module.exports = require('eden-class').extend(function(prototype) {
+module.exports = require('eden-class').extend(function() {
 	/* Require
 	-------------------------------*/
 	var hash = require('eden-hash');
@@ -21,7 +21,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return array
 	 */
-	prototype.clone = function(data) {
+	this.clone = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		return data.slice(0);
@@ -34,7 +34,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return object
 	 */
-	prototype.combine = function(keys, values) {
+	this.combine = function(keys, values) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -57,7 +57,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array[,array..]
 	 * @return this
 	 */
-	prototype.concat = prototype.merge = function(data, list) {
+	this.concat = this.merge = function(data, list) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -87,7 +87,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param function
 	 * @return bool
 	 */
-	prototype.each = function(data, callback) {
+	this.each = function(data, callback) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -115,7 +115,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param mixed
 	 * @param bool
 	 */
-	prototype.has = function(data, value) {
+	this.has = function(data, value) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -131,7 +131,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param string
 	 * @return string
 	 */
-	prototype.implode = prototype.join = function(data, delimeter) {
+	this.implode = this.join = function(data, delimeter) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -146,7 +146,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @return bool
 	 */
 
-	prototype.isArray = function(data) {
+	this.isArray = function(data) {
 		return data instanceof Array;
 	};
 	
@@ -156,7 +156,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return bool
 	 */
-	prototype.isEmpty = function(data) {
+	this.isEmpty = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -169,7 +169,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return array
 	 */
-	prototype.keys = function(data) {
+	this.keys = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -191,7 +191,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param mixed
 	 * @return number
 	 */
-	prototype.lastIndexOf = function(data, value) {
+	this.lastIndexOf = function(data, value) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -209,7 +209,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param [mixed[,mixed..]]
 	 * @return array
 	 */
-	prototype.map = function(data, callback) {
+	this.map = function(data, callback) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -229,7 +229,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param object
 	 * @return object
 	 */
-	prototype.natsort = function(data) {
+	this.natsort = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -255,7 +255,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return mixed
 	 */
-	prototype.pop = function(data) {
+	this.pop = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -270,7 +270,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param mixed[,mixed..]
 	 * @return array
 	 */
-	prototype.push = function(data, value) {
+	this.push = function(data, value) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -294,7 +294,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return array
 	 */
-	prototype.reverse = function(data) {
+	this.reverse = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -312,7 +312,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param [num]
 	 * @return array
 	 */
-	prototype.slice = function(data) {
+	this.slice = function(data) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -334,7 +334,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param mixed[,mixed..]
 	 * @return array
 	 */
-	prototype.splice = function(data) {
+	this.splice = function(data) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -353,7 +353,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param [function]
 	 * @return array
 	 */
-	prototype.sort = function(data, method) {
+	this.sort = function(data, method) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -376,7 +376,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return number
 	 */
-	prototype.size = function(data) {
+	this.size = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -390,7 +390,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param [string]
 	 * @return string
 	 */
-	prototype.toQuery = function(data, prefix) {
+	this.toQuery = function(data, prefix) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -426,7 +426,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 *
 	 * @return string
 	 */
-	prototype.toString = function(data) {
+	this.toString = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
@@ -440,7 +440,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param mixed[,mixed..]
 	 * @return array
 	 */
-	prototype.unshift = function(data) {
+	this.unshift = function(data) {
 		//Argument Testing
 		this.argument()
 			.test(1, 'array')
@@ -464,7 +464,7 @@ module.exports = require('eden-class').extend(function(prototype) {
 	 * @param array
 	 * @return array
 	 */
-	prototype.values = function(data) {
+	this.values = function(data) {
 		//Argument Testing
 		this.argument().test(1, 'array');
 		
