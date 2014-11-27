@@ -85,13 +85,15 @@ Clones an array
 ##### Code
 
 ```
-array().clone();
+var list = [2, 3, 4, 5];
+
+array().clone(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'2, 3, 4, 5'
 ```
 
 ---
@@ -120,14 +122,19 @@ Combines a list of keys and values into an object
 
 ##### Code
 
-```
-array().combine();
+``` 
+var keys = ['key2', 'key3', 'key1', 'key5'], values = [1, 2, 3, 4];
+
+array().combine(keys, values);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+key2, 1
+key3, 2
+key1, 3
+key5, 4
 ```
 
 ---
@@ -155,13 +162,15 @@ Concats arrays into one
 ##### Code
 
 ```
-array().concat();
+var list = [1,2,3,4], argument = [5, 6];
+
+array().concat(list, argument);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'1,2,3,4,5,6'
 ```
 
 ---
@@ -191,13 +200,15 @@ Custom for each loop that handles scopes and extra arguments
 ##### Code
 
 ```
-array().each();
+var list = [3, 4, 5, 6]
+
+array().each(list.hasOwnProperty(key));
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+true
 ```
 
 ---
@@ -233,13 +244,15 @@ Returns true if the array has given value
 ##### Code
 
 ```
-array().implode();
+var list = ['z','x','c'], delimeter = ('-')
+
+array().implode(list, delimeter);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'z-x-c'
 ```
 
 ---
@@ -267,13 +280,15 @@ Check if data is array @param array @return bool
 ##### Code
 
 ```
-array().isEmpty();
+var list = [3, 4, 5, 6]
+
+array().isEmpty(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+false
 ```
 
 ---
@@ -301,13 +316,15 @@ Returns a list of keys
 ##### Code
 
 ```
-array().keys();
+var list = [3, 4, 5, 6];
+
+array().keys(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+4
 ```
 
 ---
@@ -374,14 +391,18 @@ Custom map loop that handles scopes and extra arguments
 
 ##### Code
 
-```
-array().map();
+``` 
+var list = [3, 4, 5, 6];
+
+array().map(list, function(key, value));
+return value + 1;
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+list = [4, 5, 6, 7];
+
 ```
 
 ---
@@ -409,13 +430,15 @@ Sorts array by natural sort
 ##### Code
 
 ```
-array().natsort();
+var list = ['a', 'b', 'c'];
+
+array().natsort(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'a,b,c'
 ```
 
 ---
@@ -443,13 +466,15 @@ Pops array from the stack
 ##### Code
 
 ```
-array().pop();
+var list = [1, 2, 3, 4];
+
+array().pop(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+4
 ```
 
 ---
@@ -479,13 +504,15 @@ Pushes array into the stack
 ##### Code
 
 ```
-array().push();
+var list = [1, 2, 3, 4], argument = [5, 6]
+
+array().push(list, argument);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'1,2,3,4,5,6'
 ```
 
 ---
@@ -513,13 +540,15 @@ Reverses the array
 ##### Code
 
 ```
-array().reverse();
+var list = ['a','b','c'];
+
+array().reverse(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'c,b,a'
 ```
 
 ---
@@ -553,13 +582,15 @@ Picks from chosen slice and rconturns a new array @param array @param num @param
 ##### Code
 
 ```
-array().splice();
+var list = [1,2,3,4], argument = (2, 3)
+
+array().splice(list, argument);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+4
 ```
 
 ---
@@ -589,13 +620,15 @@ Sorts an array
 ##### Code
 
 ```
-array().sort();
+var list = ['c','b','a'];
+
+array().sort(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'a,b,c'
 ```
 
 ---
@@ -623,13 +656,15 @@ Returns the array size
 ##### Code
 
 ```
-array().size();
+var list = [2, 3, 4, 5];
+
+array().size(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+4
 ```
 
 ---
@@ -659,13 +694,15 @@ Converts array to query string
 ##### Code
 
 ```
-array().toQuery();
+var list = [2,3,4,5];
+
+array().toQuery(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'0=2&1=3&2=4&3=5'
 ```
 
 ---
@@ -691,13 +728,15 @@ Converts array to string
 ##### Code
 
 ```
-array().toString();
+var list = [2,3,4,5];
+
+array().toString(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+'[2,3,4,5]'
 ```
 
 ---
@@ -727,13 +766,15 @@ Unshifts array into the stack
 ##### Code
 
 ```
-array().unshift();
+var list = [1, 2, 3, 4, 5];
+newList = array().unshift(list, 7, 6);
+newList.shift();
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+6
 ```
 
 ---
@@ -761,11 +802,13 @@ Returns a list of values
 ##### Code
 
 ```
-array().values();
+var list = [2, 3, 4, 5]
+
+array().values(list);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+2, 3, 4, 5
 ```

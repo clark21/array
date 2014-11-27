@@ -3,13 +3,18 @@ var array	= require('../array');
 
 describe('Array Test Suite', function() {
 	describe('Unit Tests', function() {
-		it('should comine an array of keys and values into a hash', function() {
+		it('should combine an array of keys and values into a hash', function() {
 			var keys = ['key2', 'key3','key1', 'key5'], values = [1, 2, 3, 4], 
 			object = array().combine(keys, values);
 			
 			assert.equal(3, object.key1);
 		});
 		
+		it('should clone an array', function() {
+			var list = [2,3,4,5];
+			assert.equal('2,3,4,5', array().clone(list));
+		});
+
 		it('should parse through array', function() {
 			var list = [3, 4, 5, 6];
 			array().each(list, function(key, value) {
@@ -41,6 +46,11 @@ describe('Array Test Suite', function() {
 			});
 			
 			assert.equal(5, list[1]);
+		});
+
+		it('should natural sort the array', function() {
+			var list = ['a', 'c', 'b']; 
+			assert.equal('a,b,c', array().natsort(list));
 		});
 		
 		it('should convert array to query array', function() {
