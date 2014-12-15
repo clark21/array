@@ -74,7 +74,7 @@ Clones an array
 
 #### Parameters
 
-  1. array
+  1. [2, 3, 4, 5] - array to be cloned
 
 #### Returns
 
@@ -109,9 +109,9 @@ Combines a list of keys and values into an object
 
 #### Parameters
 
-  1. ['key2', 'key3', 'key1', 'key5'] - first array
+  1. ['key2', 'key3', 'key1', 'key5'] - first array (list of keys)
 
-  2. [1, 2, 3, 4] - second array
+  2. [1, 2, 3, 4] - second array (lists of values)
 
 #### Returns
 
