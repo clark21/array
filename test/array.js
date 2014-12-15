@@ -8,6 +8,7 @@ describe('Array Test Suite', function() {
 			object = array().combine(keys, values);
 			
 			assert.equal(3, object.key1);
+			assert.equal(1, object.key2);
 		});
 		
 		it('should clone an array', function() {
