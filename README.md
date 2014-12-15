@@ -67,7 +67,7 @@ var array = require('eden-array');
 ### clone
 
 ```
- array clone([2, 3, 4, 5]);
+ array clone( [2, 3, 4, 5] );
 ```
 
 Clones an array
@@ -102,7 +102,7 @@ array().clone(list);
 ### combine
 
 ```
- object combine(['key2', 'key3', 'key1', 'key5'], [1, 2, 3, 4]);
+ object combine( ['key2', 'key3', 'key1', 'key5'], [1, 2, 3, 4] );
 ```
 
 Combines a list of keys and values into an object
@@ -144,7 +144,7 @@ key5, 4
 ### concat
 
 ```
- this concat([1,2,3,4],[5, 6]);
+ this concat( [1,2,3,4], [5, 6] );
 ```
 
 Concats arrays into one
@@ -179,7 +179,7 @@ array().concat(list, argument);
 ### each
 
 ```
- bool each([3, 4, 5, 6], function(key, value));
+ bool each( [3, 4, 5, 6], function(key, value) );
 ```
 
 Custom for each loop that handles scopes and extra arguments
@@ -304,7 +304,7 @@ true
 ### keys
 
 ```
- array keys([3, 4, 5, 6]);
+ array keys( [3, 4, 5, 6] );
 ```
 
 Returns a list of keys
@@ -343,7 +343,7 @@ array().size(keys);
 ### lastIndexOf
 
 ```
- number lastIndexOf([2, 3, 4, 5], 2);
+ number lastIndexOf( [2, 3, 4, 5], 2 );
 ```
 
 Returns the last index of where in the array the value is found
@@ -380,7 +380,7 @@ array().lastIndexOf(list, 2);
 ### map
 
 ```
- array map([3, 4, 5, 6], function(key, value), [mixed[,mixed..]]);
+ array map( [3, 4, 5, 6], function(key, value), [mixed[,mixed..]] );
 ```
 
 Custom map loop that handles scopes and extra arguments
@@ -424,7 +424,7 @@ list;
 ### natsort
 
 ```
- object natsort(['a', 'c', 'b']);
+ object natsort( ['a', 'c', 'b'] );
 ```
 
 Sorts array by natural sort
@@ -459,7 +459,7 @@ array().natsort(list);
 ### pop
 
 ```
- mixed pop([1, 2, 3, 4]);
+ mixed pop( [1, 2, 3, 4] );
 ```
 
 Pops array from the stack
@@ -494,7 +494,7 @@ array().pop(list);
 ### push
 
 ```
- array push([1, 2, 3, 4], [5, 6]);
+ array push( [1, 2, 3, 4], [5, 6] );
 ```
 
 Pushes array into the stack
@@ -531,7 +531,7 @@ array().push(list, argument);
 ### reverse
 
 ```
- array reverse(['a','b','c']);
+ array reverse( ['a','b','c'] );
 ```
 
 Reverses the array
@@ -607,7 +607,7 @@ array().splice(list, argument);
 ### sort
 
 ```
- array sort(['a', 'c', 'b'], [function]);
+ array sort( ['a', 'c', 'b'], [function] );
 ```
 
 Sorts an array
@@ -644,7 +644,7 @@ array().sort(list);
 ### size
 
 ```
- number size([2, 3, 4, 5]);
+ number size( [2, 3, 4, 5] );
 ```
 
 Returns the array size
@@ -679,7 +679,7 @@ array().size(list);
 ### toQuery
 
 ```
- string toQuery([2, 3, 4, 5], [string]);
+ string toQuery( [2, 3, 4, 5], [string] );
 ```
 
 Converts array to query string
@@ -716,7 +716,7 @@ array().toQuery(list);
 ### toString
 
 ```
- string toString([2,3,4,5]);
+ string toString( [2,3,4,5] );
 ```
 
 Converts array to string
@@ -790,7 +790,7 @@ newList;
 ### values
 
 ```
- array values([2, 3, 4, 5]);
+ array values( [2, 3, 4, 5] );
 ```
 
 Returns a list of values
