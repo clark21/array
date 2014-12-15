@@ -19,7 +19,7 @@ describe('Array Test Suite', function() {
 			var list = [3, 4, 5, 6];
 			array().each(list, function(key, value) {
 				assert.equal(true, list.hasOwnProperty(key));
-				assert.equal(list[key], value);
+				//assert.equal(3, value);
 			});
 		});
 		
@@ -31,12 +31,16 @@ describe('Array Test Suite', function() {
 		
 		it('should test for empty array', function() {
 			var list = [3, 4, 5, 6];
+			var list1 = [];
 			assert.equal(false, array().isEmpty(list));
+			assert.equal(true, array().isEmpty(list1));
 		});
 		
 		it('should generate the keys', function() {
-			var list = [3, 4, 5, 6], keys = array().keys(list);
-			assert.equal(4, array().size(keys));
+			var list = [3, 4, 5, 6];
+			var keys = array().keys(list);
+			assert.equal(4,array().size(keys));
+			//assert.equal(["0", "1", "2", "3"], keys);
 		});
 		
 		it('should map', function() {
@@ -46,6 +50,7 @@ describe('Array Test Suite', function() {
 			});
 			
 			assert.equal(5, list[1]);
+			//assert.equal([4,5,6,7],list);
 		});
 
 		it('should natural sort the array', function() {
@@ -68,6 +73,12 @@ describe('Array Test Suite', function() {
 			array().values(list);
 			assert.equal(4, array().size(list));
 		});
+
+		it('should return the last index', function() {
+			var list = [2, 3, 4, 5];
+			var index = array().lastIndexOf(list, 2);
+			assert.equal(0, index);
+		});
 		
 		it('should combine 2 arrays together', function() {
 			var list = [1,2,3,4], argument = [5, 6];
@@ -76,8 +87,10 @@ describe('Array Test Suite', function() {
 		});
 		
 		it('should unshift', function() {
-			var list = [1,2,3,4,5], newList = array().unshift(list, 7, 6);
-			assert.equal(6, newList.shift());
+			var list = [1,2,3,4,5];
+			var newList = array().unshift(list, 7);
+			assert.equal(7, newList.shift());
+			//assert.equal([7, 1, 2, 3, 4, 5], newList);
 		});
 		
 		it('should slice', function() {
@@ -87,19 +100,20 @@ describe('Array Test Suite', function() {
 		});
 		
 		it('should splice', function() {
-			var list = [1,2,3,4], argument = (2, 3)
+			var list = [1,2,3,4], argument = (2, 3), 
 			result = array().splice(list, argument);
-			assert.equal('4', result);
+			assert.equal(4, result);
 		});
 		
 		it('should sort an array by values', function() {
-			var list = ['c','b','a'], result = array().sort(list);
+			var list = ['c','b','a'];
+			var result = array().sort(list);
 			assert.equal('a,b,c', result);
 		});
 		
 		it('should implode an array to a string', function() {
-			var list = ['z','x','c'], delimeter = ('-')
-			result = array().implode(list, delimeter);
+			var list = ['z','x','c'], delimeter = ('-');
+			var result = array().implode(list, delimeter);
 			assert.equal('z-x-c', result);
 		});
 		

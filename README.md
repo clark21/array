@@ -67,7 +67,7 @@ var array = require('eden-array');
 ### clone
 
 ```
- array clone(Array);
+ array clone([2, 3, 4, 5]);
 ```
 
 Clones an array
@@ -86,7 +86,6 @@ Clones an array
 
 ```
 var list = [2, 3, 4, 5];
-
 array().clone(list);
 ```
 
@@ -103,16 +102,16 @@ array().clone(list);
 ### combine
 
 ```
- object combine(Array, Array);
+ object combine(['key2', 'key3', 'key1', 'key5'], [1, 2, 3, 4]);
 ```
 
 Combines a list of keys and values into an object
 
 #### Parameters
 
-  1. array
+  1. ['key2', 'key3', 'key1', 'key5'] - first array
 
-  2. array
+  2. [1, 2, 3, 4] - second array
 
 #### Returns
 
@@ -123,7 +122,8 @@ Combines a list of keys and values into an object
 ##### Code
 
 ``` 
-var keys = ['key2', 'key3', 'key1', 'key5'], values = [1, 2, 3, 4];
+var keys = ['key2', 'key3', 'key1', 'key5'];
+var values = [1, 2, 3, 4];
 
 array().combine(keys, values);
 ```
@@ -144,14 +144,14 @@ key5, 4
 ### concat
 
 ```
- this concat(Array[,array..]);
+ this concat([1,2,3,4],[5, 6]);
 ```
 
 Concats arrays into one
 
 #### Parameters
 
-  1. array[,array..]
+  1. [1,2,3,4],[5, 6] - array[,array..](2 or more arrays are being concat)
 
 #### Returns
 
@@ -163,7 +163,6 @@ Concats arrays into one
 
 ```
 var list = [1,2,3,4], argument = [5, 6];
-
 array().concat(list, argument);
 ```
 
@@ -180,16 +179,16 @@ array().concat(list, argument);
 ### each
 
 ```
- bool each(Array, Function);
+ bool each([3, 4, 5, 6], function(key, value));
 ```
 
 Custom for each loop that handles scopes and extra arguments
 
 #### Parameters
 
-  1. array
+  1. [3, 4, 5, 6] - array
 
-  2. function
+  2. function(key, value) - function
 
 #### Returns
 
@@ -200,15 +199,18 @@ Custom for each loop that handles scopes and extra arguments
 ##### Code
 
 ```
-var list = [3, 4, 5, 6]
+var list = [3, 4, 5, 6], function(key, value);
+array().each(list, function(key, value));
 
-array().each(list.hasOwnProperty(key));
+list.hasOwnProperty(key);
+value;
 ```
 
 ##### Outputs
 
 ```
 true
+3
 ```
 
 ---
@@ -229,7 +231,7 @@ Returns true if the array has given value
 
   2. mixed
 
-  3. boolis.has - = function(data, value) {Argument Testingis.argument()est(1, 'array')est(1, 'mixed');turn data.indexOf(value) !== -1;*Join array elements with a string
+  3. boolis.has - = function(data, value) {Argument Testingis.argument()test(1, 'array')test(1, 'mixed');turn data.indexOf(value) !== -1;*Join array elements with a string
 
   4. array
 
@@ -244,7 +246,8 @@ Returns true if the array has given value
 ##### Code
 
 ```
-var list = ['z','x','c'], delimeter = ('-')
+var list = ['z','x','c'];
+var delimeter = ('-');
 
 array().implode(list, delimeter);
 ```
@@ -262,14 +265,14 @@ array().implode(list, delimeter);
 ### isEmpty
 
 ```
- bool isEmpty(Array);
+ bool isEmpty([]);
 ```
 
 Check if data is array @param array @return bool 
 
 #### Parameters
 
-  1. array
+  1. [] - array is empty
 
 #### Returns
 
@@ -280,15 +283,18 @@ Check if data is array @param array @return bool
 ##### Code
 
 ```
-var list = [3, 4, 5, 6]
+var list = [3, 4, 5, 6];
+var list1 = [];
 
 array().isEmpty(list);
+array().isEmpty(list1);
 ```
 
 ##### Outputs
 
 ```
 false
+true
 ```
 
 ---
@@ -298,14 +304,14 @@ false
 ### keys
 
 ```
- array keys(Array);
+ array keys([3, 4, 5, 6]);
 ```
 
 Returns a list of keys
 
 #### Parameters
 
-  1. array
+  1. [3, 4, 5, 6] - array
 
 #### Returns
 
@@ -317,13 +323,16 @@ Returns a list of keys
 
 ```
 var list = [3, 4, 5, 6];
+var keys = array().key(list);
 
 array().keys(list);
+array().size(keys);
 ```
 
 ##### Outputs
 
 ```
+['0','1','2','3']
 4
 ```
 
@@ -334,16 +343,16 @@ array().keys(list);
 ### lastIndexOf
 
 ```
- number lastIndexOf(Array, Mixed);
+ number lastIndexOf([2, 3, 4, 5], 2);
 ```
 
 Returns the last index of where in the array the value is found
 
 #### Parameters
 
-  1. array
+  1. [2, 3, 4, 5] - array
 
-  2. mixed
+  2. 2 - mixed (specified value in the list of array)
 
 #### Returns
 
@@ -354,13 +363,14 @@ Returns the last index of where in the array the value is found
 ##### Code
 
 ```
-array().lastIndexOf();
+var list = [2, 3, 4, 5];
+array().lastIndexOf(list, 2);
 ```
 
 ##### Outputs
 
 ```
-RESULTS
+0
 ```
 
 ---
@@ -370,16 +380,16 @@ RESULTS
 ### map
 
 ```
- array map(Array, Function, [mixed[,mixed..]]);
+ array map([3, 4, 5, 6], function(key, value), [mixed[,mixed..]]);
 ```
 
 Custom map loop that handles scopes and extra arguments
 
 #### Parameters
 
-  1. array
+  1. [3, 4, 5, 6] - array
 
-  2. function
+  2. function(key, value) - function
 
   3. [mixed[,mixed..]]
 
@@ -393,16 +403,18 @@ Custom map loop that handles scopes and extra arguments
 
 ``` 
 var list = [3, 4, 5, 6];
-
 array().map(list, function(key, value));
 return value + 1;
+
+list[1];
+list;
 ```
 
 ##### Outputs
 
 ```
-list = [4, 5, 6, 7];
-
+5
+[4,5,6,7]
 ```
 
 ---
@@ -412,14 +424,14 @@ list = [4, 5, 6, 7];
 ### natsort
 
 ```
- object natsort(Object);
+ object natsort(['a', 'c', 'b']);
 ```
 
 Sorts array by natural sort
 
 #### Parameters
 
-  1. object
+  1. ['a', 'c', 'b'] - object
 
 #### Returns
 
@@ -431,7 +443,6 @@ Sorts array by natural sort
 
 ```
 var list = ['a', 'b', 'c'];
-
 array().natsort(list);
 ```
 
@@ -448,14 +459,14 @@ array().natsort(list);
 ### pop
 
 ```
- mixed pop(Array);
+ mixed pop([1, 2, 3, 4]);
 ```
 
 Pops array from the stack
 
 #### Parameters
 
-  1. array
+  1.  [1, 2, 3, 4] - array
 
 #### Returns
 
@@ -467,7 +478,6 @@ Pops array from the stack
 
 ```
 var list = [1, 2, 3, 4];
-
 array().pop(list);
 ```
 
@@ -484,16 +494,16 @@ array().pop(list);
 ### push
 
 ```
- array push(Array, Mixed[,mixed..]);
+ array push([1, 2, 3, 4], [5, 6]);
 ```
 
 Pushes array into the stack
 
 #### Parameters
 
-  1. array
+  1. [1, 2, 3, 4] - array
 
-  2. mixed[,mixed..]
+  2. [5, 6] - mixed[,mixed..]
 
 #### Returns
 
@@ -505,7 +515,6 @@ Pushes array into the stack
 
 ```
 var list = [1, 2, 3, 4], argument = [5, 6]
-
 array().push(list, argument);
 ```
 
@@ -522,14 +531,14 @@ array().push(list, argument);
 ### reverse
 
 ```
- array reverse(Array);
+ array reverse(['a','b','c']);
 ```
 
 Reverses the array
 
 #### Parameters
 
-  1. array
+  1. ['a','b','c'] - array
 
 #### Returns
 
@@ -541,7 +550,6 @@ Reverses the array
 
 ```
 var list = ['a','b','c'];
-
 array().reverse(list);
 ```
 
@@ -583,7 +591,6 @@ Picks from chosen slice and rconturns a new array @param array @param num @param
 
 ```
 var list = [1,2,3,4], argument = (2, 3)
-
 array().splice(list, argument);
 ```
 
@@ -600,16 +607,16 @@ array().splice(list, argument);
 ### sort
 
 ```
- array sort(Array, [function]);
+ array sort(['a', 'c', 'b'], [function]);
 ```
 
 Sorts an array
 
 #### Parameters
 
-  1. array
+  1. ['a', 'c', 'b'] - array
 
-  2. [function]
+  2. [function] - optional
 
 #### Returns
 
@@ -621,7 +628,6 @@ Sorts an array
 
 ```
 var list = ['c','b','a'];
-
 array().sort(list);
 ```
 
@@ -638,14 +644,14 @@ array().sort(list);
 ### size
 
 ```
- number size(Array);
+ number size([2, 3, 4, 5]);
 ```
 
 Returns the array size
 
 #### Parameters
 
-  1. array
+  1. [2, 3, 4, 5] - array
 
 #### Returns
 
@@ -657,7 +663,6 @@ Returns the array size
 
 ```
 var list = [2, 3, 4, 5];
-
 array().size(list);
 ```
 
@@ -674,16 +679,16 @@ array().size(list);
 ### toQuery
 
 ```
- string toQuery(String, [string]);
+ string toQuery([2, 3, 4, 5], [string]);
 ```
 
 Converts array to query string
 
 #### Parameters
 
-  1. string
+  1. [2, 3, 4, 5] - string
 
-  2. [string]
+  2. [string] - optional
 
 #### Returns
 
@@ -695,7 +700,6 @@ Converts array to query string
 
 ```
 var list = [2,3,4,5];
-
 array().toQuery(list);
 ```
 
@@ -712,7 +716,7 @@ array().toQuery(list);
 ### toString
 
 ```
- string toString();
+ string toString([2,3,4,5]);
 ```
 
 Converts array to string
@@ -729,7 +733,6 @@ Converts array to string
 
 ```
 var list = [2,3,4,5];
-
 array().toString(list);
 ```
 
@@ -746,16 +749,16 @@ array().toString(list);
 ### unshift
 
 ```
- array unshift(Array, Mixed[,mixed..]);
+ array unshift( [1,2,3,4,5], 7 );
 ```
 
 Unshifts array into the stack
 
 #### Parameters
 
-  1. array
+  1. [1,2,3,4,5] - array
 
-  2. mixed[,mixed..]
+  2. 7 - mixed[,mixed..](new value to be added in the stack)
 
 #### Returns
 
@@ -767,14 +770,17 @@ Unshifts array into the stack
 
 ```
 var list = [1, 2, 3, 4, 5];
-newList = array().unshift(list, 7, 6);
+var newList = array().unshift(list, 7);
+
 newList.shift();
+newList;
 ```
 
 ##### Outputs
 
 ```
-6
+7
+[7, 1, 2, 3, 4, 5]
 ```
 
 ---
@@ -784,7 +790,7 @@ newList.shift();
 ### values
 
 ```
- array values(Array);
+ array values([2, 3, 4, 5]);
 ```
 
 Returns a list of values
@@ -803,7 +809,6 @@ Returns a list of values
 
 ```
 var list = [2, 3, 4, 5]
-
 array().values(list);
 ```
 
